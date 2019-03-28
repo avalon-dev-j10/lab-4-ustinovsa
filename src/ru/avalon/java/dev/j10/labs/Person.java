@@ -16,6 +16,7 @@ import java.util.Date;
  */
 public interface Person extends Comparable {
 
+    
     /**
      * Возвращает имя человека.
      *
@@ -29,5 +30,5 @@ public interface Person extends Comparable {
      * @return дата рождения в виде экземпляра типа
      * {@link Date}
      */
-    Date getBirthDate();
+    String getBirthDate();
 }
