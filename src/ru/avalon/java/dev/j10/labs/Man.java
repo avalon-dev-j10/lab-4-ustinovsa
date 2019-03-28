@@ -15,6 +15,7 @@ public class Man implements Person {
 private String name;
 private LocalDate bDate;
 
+
     public Man(String name, LocalDate bDate) {
         this.name = name;
         this.bDate = bDate;
@@ -33,13 +34,15 @@ private LocalDate bDate;
     }
 
     @Override
-    public int compareTo(Man m1, Man m2) {
-        if(m1.getName()>m2.getName()){
+    public int compareTo(String m1, String m2) {
+        if(m1.getName() > m2.getName()){
             return 1;
-        } else if (m1.getName()<m2.getName()){
-            return -1
-        } else if (m1.bDate.isBefore(m2.bDate)){
-            return 0}
+        } else if (m1.getName() < m2.getName()){
+            return -1;
+        } else (m1.bDate == (m2.bDate)){
+            return 0;
+                    }
     }
+
     
 }

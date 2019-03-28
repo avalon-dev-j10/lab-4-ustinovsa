@@ -4,25 +4,25 @@
  * and open the template in the editor.
  */
 package ru.avalon.java.dev.j10.labs;
-
+import ru.avalon.java.dev.j10.labs.Randomizer;
 /**
  *
  * @author JAVA
  */
 public class ManFactory {
-    String[] names = {John,};
-           
-    public int random(){
-    return (int)((Math.random()*5)+1);
-}
+    String[] names = {John, afg ,fga};
+                        }
     
+   Randomizer r = new Randomizer;
+        
     public Man getMan() {
         switch(random()){
             
+            
+            case 1:  return new Man(names[1], );                
+            case 2: return new Man(names[2] );
+            case 3: return new Man(names[3]);
             default: return new Man(names[0], );
-            case 1: return new Man(names[0]);                
-            case 2;
-            case 3
             }
     
 }

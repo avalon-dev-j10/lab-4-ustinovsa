@@ -64,7 +64,7 @@ public class Main {
          * 2. Проинициализируйте переменную sort экземпляром
          *    созданного класса.
          */
-        Sort sort = new Sorting;
+        Sort sort = new Sorting();
 
         /*
          * TODO(Студент): Проинициализируйте переменную comparator
