@@ -15,5 +15,5 @@ public class ManComparator implements Comparator<Man> {
     public int compare(Man m1, Man m2) {
         return m1.getName().compareTo(m2.getName());
     }
-    
+ 
 }

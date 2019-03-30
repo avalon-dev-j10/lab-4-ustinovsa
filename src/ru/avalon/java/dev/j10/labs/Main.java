@@ -106,8 +106,8 @@ public class Main {
          * 2. С использованием отладчика убедитесь в том,
          *    что массив отсортирован по возрастанию.
          */
-       // sort.sort(persons);
-
+       sort.sort(persons);
+       printManArr(persons);
         /*
          * TODO(Студент): Отсортируйте массив strings по возрастанию
          *
@@ -119,6 +119,9 @@ public class Main {
          *    что массив отсортирован по возрастанию.
          */
        sort.sort(strings);
+       printStrArr(strings);
+       
+       
        
 
         /*
@@ -131,6 +134,7 @@ public class Main {
          *    что массив отсортирован по убыванию.
          */
        sort.sort(strings, comparator);
+       printStrArr(strings);
 
     
     }
