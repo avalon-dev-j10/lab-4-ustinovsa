@@ -6,12 +6,13 @@
 package ru.avalon.java.dev.j10.labs;
 
 import java.time.LocalDate;
+import java.util.Comparator;
 
 /**
  *
  * @author JAVA
  */
-public class Man implements Person {
+public class Man implements Person{
 private String name;
 private LocalDate bDate;
 
@@ -24,25 +25,33 @@ private LocalDate bDate;
 
 
     @Override
-    public String getName() {
-        return name; //To change body of generated methods, choose Tools | Templates.
+        public String getName() {
+        return name;
     }
 
     @Override
-    public String getBirthDate() {
-        return bDate.toString(); //To change body of generated methods, choose Tools | Templates.
+    public String getBDate() {
+        return bDate.toString();
     }
 
     @Override
-    public int compareTo(String m1, String m2) {
-        if(m1.getName() > m2.getName()){
-            return 1;
-        } else if (m1.getName() < m2.getName()){
-            return -1;
-        } else (m1.bDate == (m2.bDate)){
-            return 0;
-                    }
+    public int compareTo(Person p) {
+        return Person.super.compareTo(p); 
+    }
+
+    @Override
+    public int compareTo(Object o) {
+        return Comparator.comparing(Man::getName)
+                .thenComparing(Man::getBDate)
+                .compare(this, (Man) o);
     }
 
     
-}
+    
+    
+    
+    }
+    
+
+    
+

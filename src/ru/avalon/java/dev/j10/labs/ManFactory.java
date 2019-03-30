@@ -5,24 +5,25 @@
  */
 package ru.avalon.java.dev.j10.labs;
 import ru.avalon.java.dev.j10.labs.Randomizer;
+import java.time.LocalDate;
 /**
  *
  * @author JAVA
  */
 public class ManFactory {
-    String[] names = {John, afg ,fga};
-                        }
     
-   Randomizer r = new Randomizer;
-        
+
+   String[] names = {"Nessa", "Tasuni", "Chris", "Zana", "Jun"};
+    
+   Randomizer r = new Randomizer();
+           
     public Man getMan() {
-        switch(random()){
+        switch(r.random()){
             
-            
-            case 1:  return new Man(names[1], );                
-            case 2: return new Man(names[2] );
-            case 3: return new Man(names[3]);
-            default: return new Man(names[0], );
+            case 1:  return new Man(names[1], LocalDate.of(r.randomY(),r.randomM(),r.randomD()) );                
+            case 2:  return new Man(names[2], LocalDate.of(r.randomY(),r.randomM(),r.randomD()) );
+            case 3:  return new Man(names[3], LocalDate.of(r.randomY(),r.randomM(),r.randomD()) );
+            default: return new Man(names[0], LocalDate.of(r.randomY(),r.randomM(),r.randomD()) );
             }
     
-}
+}}

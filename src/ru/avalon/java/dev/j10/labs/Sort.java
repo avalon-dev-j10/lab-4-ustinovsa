@@ -39,4 +39,13 @@ public interface Sort {
      *                   элементов массива {@code array}
      */
     void sort(Object[] array, Comparator comparator);
+    
+    /**
+     * Выполняет вывод в консоль 
+     * отсортированного массива объектов с
+     * @param array массив, подлежащий выводу в консоль
+     *
+     */
+    void printSorted(Object[] array);
+    
 }

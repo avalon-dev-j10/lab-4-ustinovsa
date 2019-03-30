@@ -10,12 +10,26 @@ package ru.avalon.java.dev.j10.labs;
  * @author Home
  */
 public class Randomizer {
+  
+    /**
+     * Генерирует случайное значение 
+     * типа @int 
+     * в диапазоне [1;5]
+    */
+    
+    public int random(){
+        int min = 1;
+        int max = 5;
+    return min + (int)(Math.random() * ((max - min) + 1));
+    }
+    
     
     /**
      * Генерирует случайное значение 
      * типа @int 
      * в диапазоне [1920;2019]
     */
+    
     public int randomY(){
         int min = 1920;
         int max = 2019;

@@ -2,6 +2,7 @@ package ru.avalon.java.dev.j10.labs;
 
 import java.util.Comparator;
 import java.util.Random;
+import ru.avalon.java.dev.j10.labs.*;
 
 
 public class Main {
@@ -12,6 +13,13 @@ public class Main {
         System.out.print(arr+" ");
         }
         System.out.println();
+        }
+    
+    private static void printManArr(Man[] array){
+        System.out.println("Random Objects Array :" );
+        for (Man man: array){
+        System.out.println(man.getName() + " " + man.getBDate());
+        }
         }
     
     private static String getStr () {
@@ -43,7 +51,7 @@ public class Main {
              }
             printStrArr(strings);
            
-            }
+            
 
 	    /*
 	     * TODO(Студент): Проинициализируйте массив persons
@@ -53,7 +61,17 @@ public class Main {
 	     * 2. Проинициализируйте массив persons 20
 	     *    экземплярыми созданного класса.
 	     */
-	    Person[] persons = new Person[20];
+        ManFactory mf = new ManFactory();
+        
+        Man[] persons = new Man[20];
+                
+            for (int j=0; j<persons.length; j++){
+            persons[j]=mf.getMan();
+              }
+            
+            printManArr(persons);
+            
+           
             
 
         /*
@@ -76,7 +94,7 @@ public class Main {
          * 2. Проинициализируйте переменную comparator
          *    экземпляром созданного класса.
          */
-        Comparator comparator = null;
+        Comparator<Man> comparator = new ManComparator();
 
         /*
          * TODO(Студент): Отсортируйте массив persons по возрастанию
@@ -100,7 +118,8 @@ public class Main {
          * 2. С использованием отладчика убедитесь в том,
          *    что массив отсортирован по возрастанию.
          */
-       // sort.sort(strings);
+       sort.sort(strings);
+       
 
         /*
          * TODO(Студент): Отсортируйте массив strings по убыванию
@@ -111,6 +130,9 @@ public class Main {
          * 2. С использованием отладчика убедитесь в том,
          *    что массив отсортирован по убыванию.
          */
-       // sort.sort(strings, comparator);
+       sort.sort(strings, comparator);
+
+    
     }
+}
 

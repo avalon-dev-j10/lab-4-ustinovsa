@@ -5,6 +5,7 @@
  */
 package ru.avalon.java.dev.j10.labs;
 
+import java.util.Arrays;
 import java.util.Comparator;
 
 /**
@@ -15,16 +16,21 @@ public class Sorting implements Sort {
     
     @Override
     public void sort(Object[] array) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    if (array instanceof Comparable[])
+    sort(array);
     }
 
     @Override
     public void sort(Comparable[] array) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Arrays.sort(array);
     }
 
     @Override
     public void sort(Object[] array, Comparator comparator) {
+    }
+
+    @Override
+    public void printSorted(Object[] array) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
