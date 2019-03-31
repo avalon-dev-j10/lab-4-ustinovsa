@@ -13,7 +13,7 @@ public class ManComparator implements Comparator<Man> {
     
     @Override
     public int compare(Man m1, Man m2) {
-        return m1.getName().compareTo(m2.getName());
+        return m1.compareTo(m2);
     }
  
 }
