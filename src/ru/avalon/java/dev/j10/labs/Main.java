@@ -32,7 +32,7 @@ public class Main {
             sb.append(ch);
             strSB=sb.toString();
                 }
-        return strSB;
+        return strSB.toLowerCase();
     }
     
     public static void main(String[] args) {
