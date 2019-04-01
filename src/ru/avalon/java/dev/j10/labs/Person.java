@@ -1,6 +1,7 @@
 package ru.avalon.java.dev.j10.labs;
 
-import java.util.Date;
+import java.time.LocalDate;
+import java.util.Comparator;
 
 /**
  * Абстрактное представление о человеке.
@@ -16,6 +17,7 @@ import java.util.Date;
  */
 public interface Person extends Comparable {
 
+    
     /**
      * Возвращает имя человека.
      *
@@ -29,5 +31,11 @@ public interface Person extends Comparable {
      * @return дата рождения в виде экземпляра типа
      * {@link Date}
      */
-    Date getBirthDate();
-}
+    String getBDate();
+    
+    
+    default public int compareTo(Person p){
+        return this.getName().compareTo(p.getName());
+        }
+    }
+    

@@ -1,9 +1,40 @@
 package ru.avalon.java.dev.j10.labs;
 
 import java.util.Comparator;
+import java.util.Random;
+import ru.avalon.java.dev.j10.labs.*;
+
 
 public class Main {
-
+    
+    private static void printStrArr(String[] array){
+        System.out.println("Random String Array :" );
+        for (String arr: array){
+        System.out.print(arr+" ");
+        }
+        System.out.println();
+        }
+    
+    private static void printManArr(Man[] array){
+        System.out.println("Random Objects Array :" );
+        for (Man man: array){
+        System.out.println(man.getName() + " " + man.getBDate());
+        }
+        }
+    
+    private static String getStr () {
+        char[] chars = "AbcdEfghIjklmnOpqrstUvwxYz".toCharArray();
+        StringBuilder sb = new StringBuilder(10);
+        Random rnd = new Random();
+        String strSB="";
+        for (int i = 0; i < 10; i++) { 
+            char ch = chars[rnd.nextInt(chars.length)]; 
+            sb.append(ch);
+            strSB=sb.toString();
+                }
+        return strSB;
+    }
+    
     public static void main(String[] args) {
         /*
          * TODO(Студент): Проинициализируйте массив strings
@@ -12,7 +43,15 @@ public class Main {
          * чтобы он содержал 20 строк, расположенных не
          * по порядку.
          */
-	    String[] strings = null;
+        
+        
+       	    String[] strings = new String[20];
+            for (int i=0; i<strings.length; i++) {
+             strings[i]=getStr();
+             }
+            printStrArr(strings);
+           
+            
 
 	    /*
 	     * TODO(Студент): Проинициализируйте массив persons
@@ -22,7 +61,18 @@ public class Main {
 	     * 2. Проинициализируйте массив persons 20
 	     *    экземплярыми созданного класса.
 	     */
-	    Person[] persons = null;
+        ManFactory mf = new ManFactory();
+        
+        Man[] persons = new Man[20];
+                
+            for (int j=0; j<persons.length; j++){
+            persons[j]=mf.getMan();
+              }
+            
+            printManArr(persons);
+            
+           
+            
 
         /*
          * TODO(Студент): Проинициализируйте переменную sort
@@ -32,7 +82,7 @@ public class Main {
          * 2. Проинициализируйте переменную sort экземпляром
          *    созданного класса.
          */
-        Sort sort = null;
+        Sort sort = new Sorting();
 
         /*
          * TODO(Студент): Проинициализируйте переменную comparator
@@ -44,7 +94,7 @@ public class Main {
          * 2. Проинициализируйте переменную comparator
          *    экземпляром созданного класса.
          */
-        Comparator comparator = null;
+        Comparator<Man> comparator = new ManComparator();
 
         /*
          * TODO(Студент): Отсортируйте массив persons по возрастанию
@@ -56,8 +106,8 @@ public class Main {
          * 2. С использованием отладчика убедитесь в том,
          *    что массив отсортирован по возрастанию.
          */
-        sort.sort(persons);
-
+       sort.sort(persons);
+       printManArr(persons);
         /*
          * TODO(Студент): Отсортируйте массив strings по возрастанию
          *
@@ -68,7 +118,11 @@ public class Main {
          * 2. С использованием отладчика убедитесь в том,
          *    что массив отсортирован по возрастанию.
          */
-        sort.sort(strings);
+       sort.sort(strings);
+       printStrArr(strings);
+       
+       
+       
 
         /*
          * TODO(Студент): Отсортируйте массив strings по убыванию
@@ -79,6 +133,10 @@ public class Main {
          * 2. С использованием отладчика убедитесь в том,
          *    что массив отсортирован по убыванию.
          */
-        sort.sort(strings, comparator);
+       sort.sort(strings, comparator);
+       printStrArr(strings);
+
+    
     }
 }
+
